@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import GlobalStyle from './globalStyle';
+import ComingSoon from './pages/ComingSoon';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import ReactGA from 'react-ga';
+
+const TRACKING_ID = "UA-174571616-2"; // YOUR_OWN_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
+
+library.add(fab)
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <ComingSoon />
+    </>
   );
 }
 
